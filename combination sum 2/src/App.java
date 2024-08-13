@@ -52,11 +52,7 @@ public class App {
         List<List<Integer>> ans= combSum2(arr,target);
 
         for(List<Integer> set : ans){
-            System.out.print("[");
-            for(int num : set){
-                System.out.print(num+", ");
-            }
-            System.out.print("] , ");
+           System.out.println(set);
         }
 
     }
