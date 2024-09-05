@@ -38,12 +38,16 @@ public class App {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println("Enter the numer of missing elements");
+        System.out.println("Enter the number of missing elements");
         int x = sc.nextInt();
 
         System.out.println("Enter the value of mean");
         int mean = sc.nextInt();
 
-        missingRolls(arr, mean, x);
+        int[] rolls = missingRolls(arr, mean, x);
+
+        for(int i=0;i<rolls.length;i++){
+            System.out.print(rolls[i]+" ");
+        }
     }
 }
