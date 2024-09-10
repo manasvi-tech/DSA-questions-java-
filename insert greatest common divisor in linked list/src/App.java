@@ -1,5 +1,7 @@
+import java.util.Scanner;
+
 public class App {
-    public ListNode insertGreatestCommonDivisors(ListNode head) {
+    public static ListNode insertGreatestCommonDivisors(ListNode head) {
         // If the list contains only one node, return the head as no insertion is needed
         if (head.next == null) return head;
 
@@ -25,7 +27,7 @@ public class App {
     }
 
     // Helper method to calculate the greatest common divisor using the Euclidean algorithm
-    private int calculateGCD(int a, int b) {
+    private static int calculateGCD(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
@@ -35,6 +37,31 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the length of the linked list");
+        int n = sc.nextInt();
+
+        ListNode dummy = new ListNode(0);
+        ListNode temp = dummy;
+
+        System.out.println("Enter the elements of the linked list");
+        for(int i=0;i<n;i++){
+            int val = sc.nextInt();
+
+            ListNode newNode = new ListNode(val);
+
+            temp.next = newNode;
+            temp = newNode;
+        }
+        
+        ListNode head = insertGreatestCommonDivisors(dummy.next);
+
+        ListNode curr = head;
+
+        while(curr!=null){
+            System.out.println(curr.val);
+            curr = curr.next;
+        }
     }
 }
