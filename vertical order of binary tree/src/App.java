@@ -7,7 +7,9 @@ import java.util.Scanner;
 import java.util.TreeMap;
 
 public class App {
+
     public static List<List<Integer>> verticalTraversal(TreeNode root){
+
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
         List<List<Integer>> list = new ArrayList<>();
 
@@ -39,14 +41,13 @@ public class App {
             if(node.right!=null){
                 q.offer(new Tuple(x+1,y+1,node.right));
             }
-        
         }
 
         for (TreeMap<Integer, PriorityQueue<Integer>> ys : map.values()) {
             list.add(new ArrayList<>());
             for (PriorityQueue<Integer> values : ys.values()) {
                 while (!values.isEmpty()) { // Poll all values from the priority queue
-                    list.get(list.size() - 1).add(values.poll());
+                    list.get( list.size() - 1 ).add(values.poll());
                 }
             }
         }

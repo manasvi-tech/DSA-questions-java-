@@ -2,6 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class TreeNode {
+
     int val;
     TreeNode left;
     TreeNode right;
@@ -19,7 +20,7 @@ public class TreeNode {
         this.right = right;
     }
 
-    static TreeNode levelOrder(Integer[] arr) {
+    static TreeNode levelOrder(Integer[] arr){
 
         if (arr == null || arr.length == 0 || arr[0] == null) {
             return null; // Handle edge case of empty or null input
@@ -31,7 +32,6 @@ public class TreeNode {
         q.add(root);
 
         int ind = 1;
-        
         while (!q.isEmpty() && ind < arr.length) {
             TreeNode curr = q.poll();
 
@@ -49,7 +49,9 @@ public class TreeNode {
             }
             ind++;
         }
-
+        
         return root;
+
     }
+    
 }
