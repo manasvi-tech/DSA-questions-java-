@@ -6,16 +6,20 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the value of n in n X n");
         int n = sc.nextInt();
+
         char[][] matrix = new char[n][n];
         List<List<String>> ans = new ArrayList<>();
         for(char[] arr : matrix){
             Arrays.fill(arr,'.');
         }
+
         NQueen(n,matrix,0,ans);
         for(List<String> comb : ans){ //Displaying results
             for(String str:comb){
-                System.out.println(str+"  ");
+                System.out.println(str+" ");
             }   
             System.out.println();
             System.out.println();
