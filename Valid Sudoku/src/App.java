@@ -1,4 +1,5 @@
 public class App {
+
     public static boolean isValidSudoku(char[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
@@ -23,9 +24,12 @@ public class App {
             // checks for the box
             if (board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c && 
             (3 * (row / 3) + i / 3 != row || 3 * (col / 3) + i % 3 != col)) return false;
+
         }
+        
         return true;
     }
+
     public static void main(String[] args) throws Exception {
         char[][] board = {
             {'5','3','.','.','7','.','.','.','.'},
