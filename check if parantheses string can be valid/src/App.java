@@ -1,3 +1,4 @@
+
 // Left-to-right: A valid string must not have more ) than ( at any point.
 // Right-to-left: A valid string must not have more ( than ) at any point.
 
@@ -41,6 +42,7 @@ public class App {
         balance = 0;
 
         // right to left
+
         for(int i=s.length()-1;i>=0;i--){
 
             char num = locked.charAt(i);
@@ -68,15 +70,16 @@ public class App {
         return true;
     }
     public static void main(String[] args) throws Exception {
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the parentheses string:");
         String s = scanner.nextLine();
         System.out.println("Enter the locked string:");
         String locked = scanner.nextLine();
-        scanner.close();
+        // scanner.close();
 
         App app = new App();
         boolean result = app.canBeValid(s, locked);
-        System.out.println("The Parantheses string is valid : " + result);
+        System.out.println("The parantheses string is valid : " + result);
     }
 }
