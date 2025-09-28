@@ -1,6 +1,7 @@
+
 public class App {
     public static void main(String[] args) throws Exception {
-        LRUCache<Integer, Integer> cache = new LRUCache<>(3);
+        LRUCache cache = new LRUCache(3);
         cache.put(1, 10);
         cache.put(2, 20);
         cache.put(3, 30);
